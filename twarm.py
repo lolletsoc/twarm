@@ -6,7 +6,7 @@ from docker import Client
 from time import time
 
 
-_BASE_URL = 'tcp://192.168.59.103:2375'
+_BASE_URL = None
 
 
 def get_test_files(tests_dir):
@@ -57,6 +57,8 @@ def main(main_dir, tests_dir):
 
 if __name__ == '__main__':
     directory = sys.argv[1]
+    _BASE_URL = sys.argv[2]
+
     tests_directory = '{}/tests'.format(directory)
 
     start = time()
